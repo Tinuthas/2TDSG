@@ -32,10 +32,13 @@ public class TesteGeneroCalendar {
 		LocalDate hoje = LocalDate.now();
 		LocalDate localData = LocalDate.of(2015, 12, 05);
 		
-		LocalTime time = LocalTime.now();
-		LocalTime horas = LocalTime.of(12, 12);
 		
+		LocalTime time = LocalTime.now();
+		@SuppressWarnings("all")
+		LocalTime horas = LocalTime.of(12, 12);
+		@SuppressWarnings("all")
 		LocalDateTime dateTime = LocalDateTime.now();
+		@SuppressWarnings("all")
 		LocalDateTime dataHora = LocalDateTime.of(localData, time);
 		
 		DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
