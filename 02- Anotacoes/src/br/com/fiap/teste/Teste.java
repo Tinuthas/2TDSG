@@ -3,6 +3,7 @@ package br.com.fiap.teste;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+import br.com.fiap.anotacao.Coluna;
 import br.com.fiap.bean.Animal;
 
 public class Teste {
@@ -32,6 +33,15 @@ public class Teste {
 		for (Field a : atributos) {
 			System.out.println(a.getName());
 		}
+		
+		// Recuperar as anotações 
+		System.out.println("\nANOTAÇÕES:");
+		for (Field a : atributos) {
+			Coluna c = a.getAnnotation(Coluna.class);
+			System.out.println("Campo: " + c.nome());
+			System.out.println("Obrigatorio: " + c.nullable());
+		}
+		
 	}
 
 }

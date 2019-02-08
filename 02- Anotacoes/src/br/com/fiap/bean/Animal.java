@@ -1,7 +1,9 @@
 package br.com.fiap.bean;
 
 import br.com.fiap.anotacao.Coluna;
+import br.com.fiap.anotacao.Tabela;
 
+@Tabela(nome = "TAB_ANIMAL")
 public class Animal {
 
 	@Coluna(nome = "cd_animal", nullable = false)

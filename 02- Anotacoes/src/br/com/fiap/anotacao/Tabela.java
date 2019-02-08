@@ -5,12 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Retention(RetentionPolicy.RUNTIME) // Manter a anotação até a execução
-@Target(ElementType.FIELD) // Utilizar em atributos
-public @interface Coluna {
-
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface Tabela {
+	
 	String nome();
-
-	boolean nullable();
 
 }
