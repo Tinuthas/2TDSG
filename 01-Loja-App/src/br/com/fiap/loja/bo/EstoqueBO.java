@@ -1,10 +1,10 @@
 package br.com.fiap.loja.bo;
 
-import br.com.fiap.loja.bean.Produto;
+import br.com.fiap.loja.to.ProdutoTO;
 
 public class EstoqueBO {
-	
-	public static Produto consultarProduto(Produto p) {
+
+	public static ProdutoTO consultarProduto(ProdutoTO p) {
 
 		String mensagem = "";
 		switch (p.getCodigoProduto()) {

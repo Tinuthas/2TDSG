@@ -1,4 +1,4 @@
-package br.com.fiap.loja.teste;
+package br.com.fiap.loja.singleton;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -15,7 +15,7 @@ public class PropertySingleton {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+
 		}
 		return p;
 	}

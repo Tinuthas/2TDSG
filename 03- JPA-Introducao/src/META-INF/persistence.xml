@@ -9,7 +9,7 @@
 				 CREATE: Drop, Create
 				 VALIDATE: Valida se as classes estão de acordo com a tebela
 			 -->
-			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 			<property name="javax.persistence.jdbc.user" value="RM81549"/>
 			<property name="javax.persistence.jdbc.password" value="150400"/>

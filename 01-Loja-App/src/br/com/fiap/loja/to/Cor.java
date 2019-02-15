@@ -1,4 +1,4 @@
-package br.com.fiap.loja.bean;
+package br.com.fiap.loja.to;
 
 public enum Cor {
 	

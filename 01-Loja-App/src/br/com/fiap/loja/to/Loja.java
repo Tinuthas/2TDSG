@@ -1,11 +1,11 @@
-package br.com.fiap.loja.bean;
+package br.com.fiap.loja.to;
 
 public class Loja {
 
 	private String razaoSocial;
-	private Produto produto;
+	private ProdutoTO produto;
 
-	public Loja(String razaoSocial, Produto produto) {
+	public Loja(String razaoSocial, ProdutoTO produto) {
 		super();
 		this.razaoSocial = razaoSocial;
 		this.produto = produto;
@@ -23,11 +23,11 @@ public class Loja {
 		this.razaoSocial = razaoSocial;
 	}
 
-	public Produto getProduto() {
+	public ProdutoTO getProduto() {
 		return produto;
 	}
 
-	public void setProduto(Produto produto) {
+	public void setProduto(ProdutoTO produto) {
 		this.produto = produto;
 	}
 
