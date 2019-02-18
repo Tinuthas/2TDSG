@@ -1,6 +1,7 @@
 package br.com.fiap.entity;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,11 +39,11 @@ public class Zoologico {
 
 	@Temporal(TemporalType.TIME)
 	@Column(name = "hr_abertura")
-	private Calendar abertura;
+	private Date abertura;
 
 	@Temporal(TemporalType.TIME)
 	@Column(name = "hr_fechamento")
-	private Calendar fechamento;
+	private Date fechamento;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "dt_inauguracao", updatable = false)
@@ -62,7 +63,7 @@ public class Zoologico {
 
 	}
 
-	public Zoologico(int codigo, String nome, int quantidadeAnimais, Tipo tipo, Calendar abertura, Calendar fechamento,
+	public Zoologico(int codigo, String nome, int quantidadeAnimais, Tipo tipo, Date abertura, Date fechamento,
 			Calendar dataAbertura, byte[] logo) {
 		super();
 		this.codigo = codigo;
@@ -74,6 +75,21 @@ public class Zoologico {
 		this.dataAbertura = dataAbertura;
 		this.logo = logo;
 	}
+	
+	public Zoologico(String nome, int quantidadeAnimais, Tipo tipo, Date abertura, Date fechamento,
+			Calendar dataAbertura, boolean situacaoEmergencia, byte[] logo) {
+		super();
+		this.nome = nome;
+		this.quantidadeAnimais = quantidadeAnimais;
+		this.tipo = tipo;
+		this.abertura = abertura;
+		this.fechamento = fechamento;
+		this.dataAbertura = dataAbertura;
+		this.situacaoEmergencia = situacaoEmergencia;
+		this.logo = logo;
+	}
+	
+	
 
 	public int getCodigo() {
 		return codigo;
@@ -107,11 +123,11 @@ public class Zoologico {
 		this.tipo = tipo;
 	}
 
-	public Calendar getFechamento() {
+	public Date getFechamento() {
 		return fechamento;
 	}
 
-	public void setFechamento(Calendar fechamento) {
+	public void setFechamento(Date fechamento) {
 		this.fechamento = fechamento;
 	}
 
