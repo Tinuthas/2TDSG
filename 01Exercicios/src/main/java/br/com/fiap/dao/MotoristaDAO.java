@@ -8,9 +8,9 @@ public interface MotoristaDAO {
 	
 	void cadastrar(Motorista motorista);
 
-	Motorista consultar(int codigo) ;
+	Motorista consultar(int codigo) throws SearchNotFoundException;
 
-	void atualizar(Motorista imovel);
+	void atualizar(Motorista veiculo);
 
 	void remover(int codigo) throws SearchNotFoundException;
 

@@ -10,7 +10,7 @@ public interface VeiculoDAO {
 
 	Veiculo consultar(int codigo) ;
 
-	void atualizar(Veiculo imovel);
+	void atualizar(Veiculo veiculo);
 
 	void remover(int codigo) throws SearchNotFoundException;
 
