@@ -2,41 +2,42 @@ package br.com.fiap.dao.impl;
 
 import javax.persistence.EntityManager;
 
-import br.com.fiap.dao.ImovelDAO;
-import br.com.fiap.entity.Imovel;
+import br.com.fiap.dao.VeiculoDAO;
+import br.com.fiap.entity.Veiculo;
 import br.com.fiap.excecao.CommitException;
 import br.com.fiap.excecao.SearchNotFoundException;
 
-public class ImovelDAOImpl implements ImovelDAO {
-
+public class VeiculoDAOImpl implements VeiculoDAO {
+	
 	private EntityManager em;
-
-	public ImovelDAOImpl(EntityManager em) {
-		super();
+	
+	
+	
+	public VeiculoDAOImpl(EntityManager em) {
 		this.em = em;
 	}
 
-	public void cadastrar(Imovel imovel) {
-		em.persist(imovel);
+	public void cadastrar(Veiculo veiculo) {
+		em.persist(veiculo);
+		
 	}
 
-	public Imovel consultar(int codigo) {
-		Imovel i = em.find(Imovel.class, codigo);
-//		if (i.equals(null)) {
-//			throw new Exception("Objeto Imovél não encontrado");
-//		}
-		return i;
+	public Veiculo consultar(int codigo){
+		Veiculo veiculo = em.find(Veiculo.class, codigo);
+		return veiculo;
 	}
 
-	public void atualizar(Imovel imovel) {
+	public void atualizar(Veiculo imovel) {
 		em.merge(imovel);
+		
 	}
 
 	public void remover(int codigo) throws SearchNotFoundException {
-		Imovel imovel = consultar(codigo);
-		if(imovel == null)
+		Veiculo veiculo = consultar(codigo);
+		if(veiculo == null )
 			throw new SearchNotFoundException();
-		em.remove(imovel);
+		em.remove(veiculo);
+
 	}
 
 	public void commit() throws CommitException {
@@ -48,8 +49,7 @@ public class ImovelDAOImpl implements ImovelDAO {
 			em.getTransaction().rollback();
 			throw new CommitException("Commit deu ruim", e);
 		}
+		
 	}
-	
-	
 
 }

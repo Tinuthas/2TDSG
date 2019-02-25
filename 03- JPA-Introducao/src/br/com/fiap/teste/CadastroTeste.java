@@ -2,7 +2,6 @@ package br.com.fiap.teste;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Formatter;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
