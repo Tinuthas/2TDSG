@@ -6,6 +6,7 @@ import javax.persistence.Persistence;
 
 import br.com.fiap.dao.VeiculoDAO;
 import br.com.fiap.dao.impl.VeiculoDAOImpl;
+import br.com.fiap.entity.Veiculo;
 
 public class ConsultarVeiculo {
 	
@@ -17,7 +18,8 @@ public class ConsultarVeiculo {
 		VeiculoDAO dao = new VeiculoDAOImpl(em);
 		
 		try {
-			System.out.println(dao.consultar(0));
+			Veiculo v = dao.consultar(1);
+			System.out.println(v.getAno());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
