@@ -106,7 +106,7 @@
      */
     public EstoqueBOStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost:8080/05-ExemploWsProvider/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/" );
+                    this(configurationContext,"http://10.3.8.34:8080/05-ExemploWsProvider/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/" );
                 
     }
 
@@ -115,7 +115,7 @@
      */
     public EstoqueBOStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost:8080/05-ExemploWsProvider/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/" );
+                    this("http://10.3.8.34:8080/05-ExemploWsProvider/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/" );
                 
     }
 
@@ -429,7 +429,7 @@
         }
         return false;
     }
-     //http://localhost:8080/05-ExemploWsProvider/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/
+     //http://10.3.8.34:8080/05-ExemploWsProvider/services/EstoqueBO.EstoqueBOHttpSoap12Endpoint/
         public static class ConsultarProdutoResponse
         implements org.apache.axis2.databinding.ADBBean{
         
