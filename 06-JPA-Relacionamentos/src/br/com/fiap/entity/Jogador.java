@@ -32,5 +32,60 @@ public class Jogador {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "ds_posicao")
 	private Posicao posicao;
+	
+	
+
+	public Jogador() {
+		super();
+	}
+
+	public Jogador(Time time, String nome, Posicao posicao) {
+		super();
+		this.time = time;
+		this.nome = nome;
+		this.posicao = posicao;
+	}
+
+	public Jogador(int codigo, Time time, String nome, Posicao posicao) {
+		super();
+		this.codigo = codigo;
+		this.time = time;
+		this.nome = nome;
+		this.posicao = posicao;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public Time getTime() {
+		return time;
+	}
+
+	public void setTime(Time time) {
+		this.time = time;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Posicao getPosicao() {
+		return posicao;
+	}
+
+	public void setPosicao(Posicao posicao) {
+		this.posicao = posicao;
+	}
+	
+	
 
 }
