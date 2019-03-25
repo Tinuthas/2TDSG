@@ -2,8 +2,10 @@ package br.com.fiap.entity;
 
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +26,7 @@ public class Tecnico {
 	@GeneratedValue(generator="tecnico", strategy = GenerationType.SEQUENCE)
 	private int codigo;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinColumn(name="cd_time")
 	private Time time;
 	

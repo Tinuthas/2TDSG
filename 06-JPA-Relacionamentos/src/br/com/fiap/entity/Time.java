@@ -1,12 +1,17 @@
 package br.com.fiap.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -25,8 +30,12 @@ public class Time {
 	@OneToOne(mappedBy="time")
 	private Tecnico tecnico;
 	
-	@OneToMany(mappedBy="time")
-	private List<Jogador> jogadores;
+	@OneToMany(mappedBy="time", cascade= CascadeType.PERSIST)
+	private List<Jogador> jogadores = new ArrayList<Jogador>();
+	
+	@ManyToMany(cascade=CascadeType.PERSIST)
+	@JoinTable(name = "T_TIME_CAMPEONATO", joinColumns= @JoinColumn(name=""), inverseJoinColumns = @JoinColumn(name=""))
+	private List<Campeonato> campeonatos; 
 	
 	@Column(name="nm_time", nullable = false)
 	private String nome;
@@ -42,7 +51,6 @@ public class Time {
 	public Time(Tecnico tecnico, String nome, int titulo) {
 		super();
 		this.tecnico = tecnico;
-		this.jogadores = jogadores;
 		this.nome = nome;
 		this.titulo = titulo;
 	}
@@ -51,7 +59,6 @@ public class Time {
 		super();
 		this.codigo = codigo;
 		this.tecnico = tecnico;
-		this.jogadores = jogadores;
 		this.nome = nome;
 		this.titulo = titulo;
 	}
@@ -103,6 +110,16 @@ public class Time {
 		j.setTime(this);
 		
 	}
+
+	public List<Campeonato> getCampeonatos() {
+		return campeonatos;
+	}
+
+	public void setCampeonatos(List<Campeonato> campeonatos) {
+		this.campeonatos = campeonatos;
+	}
+	
+	
 	
 	
 	
